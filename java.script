@@ -1,0 +1,57 @@
+// Referencias
+const navbar = document.getElementById('navbar');
+const toggleBtn = document.getElementById('toggleBtn');
+const menu = document.getElementById('menu');
+
+// Mostrar navbar con animación al cargar
+window.addEventListener('load', () => {
+  navbar.classList.add('visible');
+});
+
+// Toggle menú hamburguesa en móvil
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('#menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('open');
+  });
+});
+
+// Scroll: cambiar estilo del navbar y activar animaciones
+window.addEventListener('scroll', () => {
+  // Cambia fondo y padding del navbar
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolling');
+  } else {
+    navbar.classList.remove('scrolling');
+  }
+
+  // Resaltar sección activa
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('#menu a');
+  let current = '';
+  sections.forEach(section => {
+    const top = window.scrollY;
+    const offset = section.offsetTop - 70;
+    const height = section.offsetHeight;
+    if (top >= offset && top < offset + height) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('activo');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('activo');
+    }
+  });
+
+  // Mostrar secciones animadas
+  document.querySelectorAll('.animada').forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight * 0.9) {
+      sec.classList.add('visible');
+    }
+  });
+});

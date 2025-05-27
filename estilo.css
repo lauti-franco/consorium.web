@@ -1,0 +1,337 @@
+/* RESET Y BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ENCABEZADO */
+header {
+  background: #091627;
+  color: white;
+  text-align: center;
+  padding: 50px 50px;
+}
+
+.logo {
+  width: 500px;
+  margin-bottom: 10px;
+}
+
+/* NAVBAR STICKY + HAMBURGUESA */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #001f3f;
+  z-index: 1000;
+  padding: 15px 0;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s ease;
+}
+
+.navbar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar.scrolling {
+  background-color: #001933;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  padding: 8px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover,
+.menu a.activo {
+  background-color: #88c0f0;
+  color: #002b5c;
+  font-weight: bold;
+}
+
+/* HAMBURGUESA */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+}
+
+.menu.open {
+  display: flex !important;
+}
+
+/* SECCIONES */
+.seccion {
+  padding: 60px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.seccion h2 {
+  color: #002b5c;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.seccion h3 {
+  color: #004080;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.seccion ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* FORMULARIOS */
+form {
+  background-color: #f4f4f4;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #002b5c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #004080;
+}
+
+/* CONTACTO */
+#contacto p {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1.1em;
+}
+
+#contacto a {
+  color: #002b5c;
+  text-decoration: none;
+}
+
+#contacto a:hover {
+  text-decoration: underline;
+}
+
+/* BOTONES FLOTANTES */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-size: 16px;
+}
+
+.btn-arriba {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #002b5c;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  text-decoration: none;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+.btn-arriba:hover {
+  background-color: #004080;
+}
+
+/* FAQ */
+.faq details {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-left: 4px solid #004080;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.faq summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #002b5c;
+  font-size: 1.1em;
+}
+
+/* TESTIMONIOS */
+.testimonio {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 15px 0;
+  border-left: 4px solid #004080;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+.testimonio cite {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* FOOTER */
+footer {
+  background-color: #091627;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* ANIMACIÓN DE SECCIONES */
+.animada {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.animada.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .seccion h2 {
+    font-size: 1.5em;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .whatsapp,
+  .btn-arriba {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+.instagram-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.instagram-link a {
+  color: #002b5c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.instagram-link a:hover {
+  color: #e1306c; /* color rosa Instagram */
+}
+
+.icono-instagram {
+  width: 24px;
+  height: 24px;
+}
+
+.mapa iframe {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.centrado {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
+  font-size: 1.1em;
+}
